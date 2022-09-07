@@ -30,24 +30,32 @@ export const notificationData = [
     text: 'Vercel is live! Personalization at the edge',
     time: '7 hours ago',
     url: '/',
+    avatar: 'https://i.pravatar.cc/150?img=1',
+    alt: 'item 1',
   },
   {
     id: 2,
     text: 'Recommended: ThinkMedia upload new video',
     time: '11 hours ago',
     url: '/',
+    avatar: 'https://i.pravatar.cc/150?img=2',
+    alt: 'item 2',
   },
   {
     id: 3,
     text: 'SportsCentral: Uploaded India vs Pak Match',
     time: '12 hours ago',
     url: '/',
+    avatar: 'https://i.pravatar.cc/150?img=3',
+    alt: 'item 3',
   },
   {
     id: 4,
     text: 'SunMusic: PS1 Video Ponni Nadhi | AR Rahman | Mani Ratnam',
     time: '1 day ago',
     url: '/',
+    avatar: 'https://i.pravatar.cc/150?img=4',
+    alt: 'item 4',
   },
 ];
 

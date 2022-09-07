@@ -1,13 +1,11 @@
-import React, { useState } from 'react';
+import { youtubeResponse } from '@data/app.data';
 import Box from '@mui/material/Box';
+import CardList from './CardList';
+import React, { useState } from 'react';
+import Shorts from './Shorts';
 import SideList from './SideList';
 import TabList from './TabList';
-import CardList from './CardList';
-import Shorts from './Shorts';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { youtubeResponse } from '../data/app.data';
-import Grid from '@mui/material/Grid';
+import { appContentWrapper, flexColumnGrow } from '@styles/styles';
 
 const AppContentArea = ({ isOpen }) => {
   const [hide, setHide] = useState(false);
@@ -24,15 +22,7 @@ const AppContentArea = ({ isOpen }) => {
   };
   const sideBarWidth = isOpen ? '70px' : '250px';
   return (
-    <Box
-      component="main"
-      sx={{
-        display: 'flex',
-        mt: 8,
-        width: '100vw',
-        overflow: 'hidden',
-      }}
-    >
+    <Box component="main" sx={appContentWrapper}>
       <Box
         component="div"
         sx={{
@@ -44,10 +34,7 @@ const AppContentArea = ({ isOpen }) => {
       >
         <SideList />
       </Box>
-      <Box
-        component="div"
-        sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column' }}
-      >
+      <Box component="div" sx={flexColumnGrow}>
         <Box
           sx={{
             my: 2,

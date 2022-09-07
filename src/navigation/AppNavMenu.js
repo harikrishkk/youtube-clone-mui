@@ -1,28 +1,29 @@
-import React from 'react';
+import { AiFillYoutube } from 'react-icons/ai';
 import AppBar from '@mui/material/AppBar';
-import Toolbar from '@mui/material/Toolbar';
+import Box from '@mui/material/Box';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import { AiFillYoutube } from 'react-icons/ai';
-import Upload from '@components/Upload';
 import NotificationsList from '@components/NotificationList';
-import UserProfile from '@components/UserProfile';
+import React from 'react';
 import SearchBar from './SearchBar';
+import Toolbar from '@mui/material/Toolbar';
+import Typography from '@mui/material/Typography';
+import Upload from '@components/Upload';
+import UserProfile from '@components/UserProfile';
+import {
+  appBar,
+  toolbarWrapper,
+  flexAlignCenter,
+  logoText,
+  hideOnMobile,
+} from '@styles/styles';
 
 const AppNavMenu = (props) => {
   return (
-    <AppBar component="nav" sx={{ backgroundColor: 'white', color: '#000' }}>
+    <AppBar component="nav" sx={appBar}>
       <Toolbar>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'space-between',
-            flexGrow: 1,
-          }}
-        >
-          <Box sx={{ display: 'flex', alignItems: 'center' }}>
+        <Box sx={toolbarWrapper}>
+          <Box sx={flexAlignCenter}>
             <IconButton
               color="inherit"
               aria-label="open drawer"
@@ -33,22 +34,14 @@ const AppNavMenu = (props) => {
               <MenuIcon />
             </IconButton>
             <AiFillYoutube size={32} />
-            <Typography
-              variant="h6"
-              component="div"
-              sx={{
-                fontSize: 22,
-                ml: 1,
-                fontFamily: 'Oswald',
-              }}
-            >
+            <Typography variant="h6" component="div" sx={logoText}>
               YouTube
             </Typography>
           </Box>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={hideOnMobile}>
             <SearchBar />
           </Box>
-          <Box sx={{ display: { xs: 'none', sm: 'flex' } }}>
+          <Box sx={hideOnMobile}>
             <Upload />
             <NotificationsList />
             <UserProfile />

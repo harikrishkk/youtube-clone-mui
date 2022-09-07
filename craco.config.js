@@ -9,6 +9,7 @@ module.exports = {
       '@navigation': path.join(path.resolve(__dirname, './src/navigation')),
       '@themes': path.join(path.resolve(__dirname, './src/themes')),
       '@hooks': path.join(path.resolve(__dirname, './src/hooks')),
+      '@styles': path.join(path.resolve(__dirname, './src/styles')),
     },
   },
 };

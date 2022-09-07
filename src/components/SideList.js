@@ -1,23 +1,18 @@
+import { sideListItems } from '@data/app.data';
 import * as React from 'react';
 import Box from '@mui/material/Box';
+import Divider from '@mui/material/Divider';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import Divider from '@mui/material/Divider';
 import Typography from '@mui/material/Typography';
-import { sideListItems } from '@data/app.data';
+import { sideListWrapper } from '@styles/styles';
 
-export default function SideList() {
+const SideList = () => {
   return (
-    <Box
-      sx={{
-        width: '100%',
-        bgcolor: 'background.paper',
-        borderRight: '1px solid #ddd',
-      }}
-    >
+    <Box sx={sideListWrapper}>
       {sideListItems.map((item) => {
         return (
           <React.Fragment key={item.id}>
@@ -39,7 +34,7 @@ export default function SideList() {
               <Divider />
             ) : (
               <nav aria-label="Side list items">
-                <List>
+                <List sx={{ p: 0 }}>
                   <ListItem disablePadding>
                     <ListItemButton>
                       <ListItemIcon>{item.icon}</ListItemIcon>
@@ -54,4 +49,6 @@ export default function SideList() {
       })}
     </Box>
   );
-}
+};
+
+export default SideList;

@@ -1,12 +1,12 @@
 import { RiVideoUploadFill } from 'react-icons/ri';
+import { uploadMenuItems } from '@data/app.data';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
 import React from 'react';
 import Typography from '@mui/material/Typography';
-import useToggle from '../hooks/useToggle';
-import { uploadMenuItems } from '@data/app.data';
+import useToggle from '@hooks/useToggle';
 
 const Upload = () => {
   const { anchorEl, open, handleClick, handleClose } = useToggle();

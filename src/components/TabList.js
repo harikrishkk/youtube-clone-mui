@@ -1,8 +1,8 @@
-import React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Box from '@mui/material/Box';
 import { tabItems } from '@data/app.data';
+import Box from '@mui/material/Box';
+import React from 'react';
+import Tab from '@mui/material/Tab';
+import Tabs from '@mui/material/Tabs';
 
 const TabList = () => {
   const [value, setValue] = React.useState(0);

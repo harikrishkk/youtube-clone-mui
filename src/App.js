@@ -3,6 +3,7 @@ import * as React from 'react';
 import { Box } from '@mui/material';
 import AppNavMenu from '@navigation/AppNavMenu';
 import AppContentArea from '@components/AppContentArea';
+import { appWrapper } from '@styles/styles';
 
 function App() {
   const [mobileOpen, setMobileOpen] = React.useState(false);
@@ -10,7 +11,7 @@ function App() {
     setMobileOpen(!mobileOpen);
   };
   return (
-    <Box sx={{ display: 'flex', height: '100vh', overflow: 'hidden' }}>
+    <Box sx={appWrapper}>
       <AppNavMenu handleDrawerToggle={handleDrawerToggle} />
       <AppContentArea isOpen={mobileOpen} />
     </Box>

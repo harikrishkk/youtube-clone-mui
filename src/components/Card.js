@@ -1,17 +1,17 @@
+import { AiFillCheckCircle } from 'react-icons/ai';
+import { appCardList, flexColumnCenter } from '@styles/styles';
+import { trimText } from '@data/app.data';
+import Avatar from '@mui/material/Avatar';
+import Box from '@mui/system/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Box from '@mui/system/Box';
-import Avatar from '@mui/material/Avatar';
 import Link from '@mui/material/Link';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
-import Typography from '@mui/material/Typography';
-
 import React from 'react';
-import { AiFillCheckCircle } from 'react-icons/ai';
-import { trimText } from '@data/app.data';
+import Typography from '@mui/material/Typography';
 
 const AppCard = ({ url, title, channelTitle, videoId }) => {
   return (
@@ -20,15 +20,7 @@ const AppCard = ({ url, title, channelTitle, videoId }) => {
         <CardMedia component="img" height="240" image={url} alt={title} />
       </Link>
       <CardContent sx={{ m: 0, p: 0 }}>
-        <List
-          sx={{
-            width: '100%',
-            bgcolor: 'background.paper',
-            p: 0,
-            m: 0,
-            maxWidth: '100%',
-          }}
-        >
+        <List sx={appCardList}>
           <ListItem>
             <ListItemAvatar>
               <Avatar
@@ -36,13 +28,7 @@ const AppCard = ({ url, title, channelTitle, videoId }) => {
                 src={`https://i.pravatar.cc/150?img=1`}
               />
             </ListItemAvatar>
-            <Box
-              sx={{
-                display: 'flex',
-                flexDirection: 'column',
-                justifyContent: 'center',
-              }}
-            >
+            <Box sx={flexColumnCenter}>
               <Typography
                 sx={{ fontWeight: 'bold', mb: 1 }}
                 gutterBottom

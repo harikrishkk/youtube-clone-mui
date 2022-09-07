@@ -1,33 +1,29 @@
-import Box from '@mui/system/Box';
-import React from 'react';
 import { CgYoutube } from 'react-icons/cg';
+import { RiCloseFill } from 'react-icons/ri';
+import { shortsItems } from '@data/app.data';
+import Box from '@mui/system/Box';
+import Button from '@mui/material/Button';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
-import Typography from '@mui/material/Typography';
-import { shortsItems } from '@data/app.data';
-import Button from '@mui/material/Button';
 import Link from '@mui/material/Link';
-import { RiCloseFill } from 'react-icons/ri';
+import React from 'react';
+import Typography from '@mui/material/Typography';
+import {
+  shortsWrapper,
+  flex,
+  shortsHeader,
+  scrollWrapper,
+  shortsCard,
+} from '@styles/styles';
 
 const Shorts = ({ hideShorts, isHidden, undoHide }) => {
   return (
     <Box>
-      <Box
-        component="div"
-        sx={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          my: 3,
-        }}
-      >
-        <Box sx={{ display: 'flex' }}>
+      <Box component="div" sx={shortsWrapper}>
+        <Box sx={flex}>
           <CgYoutube size={32} color="red" />
-          <Typography
-            sx={{ ml: 1, fontSize: 20, fontWeight: 'bold' }}
-            variant="h6"
-          >
+          <Typography sx={shortsHeader} variant="h6">
             Shorts
           </Typography>
         </Box>
@@ -43,18 +39,12 @@ const Shorts = ({ hideShorts, isHidden, undoHide }) => {
           </Typography>
         </Box>
       ) : (
-        <Box
-          component="div"
-          sx={{
-            overflowY: 'scroll',
-            '::-webkit-scrollbar': { height: '3px' },
-          }}
-        >
-          <Box component="div" sx={{ display: 'flex' }}>
+        <Box component="div" sx={scrollWrapper}>
+          <Box component="div" sx={flex}>
             {shortsItems.map((item) => {
               return (
                 <Link key={item.id} href={item.shortsUrl}>
-                  <Card sx={{ maxWidth: 200, boxShadow: 'none', mx: 2 }}>
+                  <Card sx={shortsCard}>
                     <CardMedia
                       component="img"
                       height="300"

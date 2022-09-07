@@ -1,4 +1,5 @@
 import { FaUserCircle } from 'react-icons/fa';
+import { userProfileItems } from '@data/app.data';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -14,7 +15,7 @@ import Menu from '@mui/material/Menu';
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import useToggle from '@hooks/useToggle';
-import { userProfileItems } from '@data/app.data';
+import { inlineText } from '@styles/styles';
 
 const UserProfile = () => {
   const { anchorEl, open, handleClick, handleClose } = useToggle();
@@ -49,10 +50,7 @@ const UserProfile = () => {
             primary="Oh my Javascript"
             secondary={
               <React.Fragment>
-                <Typography
-                  sx={{ display: 'inline', fontSize: 12 }}
-                  component="span"
-                >
+                <Typography sx={inlineText} component="span">
                   <Link href="#" underline="none">
                     Manage Your Google Account
                   </Link>
@@ -64,7 +62,7 @@ const UserProfile = () => {
         <Box sx={{ minWidth: 300, borderTop: '1px solid #ddd' }}>
           {userProfileItems.map((item) => {
             return (
-              <List key={item.id}>
+              <List sx={{ p: 0 }} key={item.id}>
                 {item.divider ? (
                   <Divider />
                 ) : (

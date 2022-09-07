@@ -1,4 +1,5 @@
 import { BsBellFill } from 'react-icons/bs';
+import { notificationData } from '@data/app.data';
 import Avatar from '@mui/material/Avatar';
 import Box from '@mui/material/Box';
 import Button from '@mui/material/Button';
@@ -12,7 +13,7 @@ import Menu from '@mui/material/Menu';
 import React from 'react';
 import Typography from '@mui/material/Typography';
 import useToggle from '@hooks/useToggle';
-import { notificationData } from '@data/app.data';
+import { notificationWrapper, inlineText } from '@styles/styles';
 
 const NotificationsList = () => {
   const { anchorEl, open, handleClick, handleClose } = useToggle();
@@ -36,32 +37,20 @@ const NotificationsList = () => {
           'aria-labelledby': 'basic-button',
         }}
       >
-        <List
-          sx={{
-            width: '100%',
-            maxWidth: 360,
-            pb: 0,
-          }}
-        >
+        <List sx={notificationWrapper}>
           {notificationData.map((item) => {
             return (
               <Link href={item.url} key={item.id} underline="none">
                 <ListItem sx={{ pt: 0, pb: 1, mt: 1 }} alignItems="flex-start">
                   <ListItemAvatar>
-                    <Avatar
-                      alt="Channel avatar"
-                      src={`https://i.pravatar.cc/150?img=${item.id}`}
-                    />
+                    <Avatar alt={item.alt} src={item.avatar} />
                   </ListItemAvatar>
                   <ListItemText
                     primary={item.text}
                     secondary={
                       <React.Fragment>
                         <Box sx={{ mt: 2 }}>
-                          <Typography
-                            sx={{ display: 'inline', fontSize: 12 }}
-                            component="span"
-                          >
+                          <Typography sx={inlineText} component="span">
                             {item.time}
                           </Typography>
                         </Box>
